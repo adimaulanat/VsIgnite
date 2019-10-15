@@ -37,6 +37,14 @@ function getActiveScreenAndParams() {
   return findActiveScreen(state, null)
 }
 
+function goBack() {
+    if (_navigator) {
+        _navigator.props.dispatch(
+            NavigationActions.back({})
+        );
+    }
+}
+
 // add other navigation functions that you need and export them
 
 export default {
@@ -44,4 +52,5 @@ export default {
   dispatch,
   setTopLevelNavigator,
   getActiveScreenAndParams,
+  goBack
 };
